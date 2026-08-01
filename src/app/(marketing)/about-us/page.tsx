@@ -24,8 +24,7 @@ export default function AboutUs() {
 
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href =
-      "https://ccs-infratech.s3.amazonaws.com/blogs/1767548047163-Amor%20Villa%20Brochure_New%20(1)%20(1).pdf";
+    link.href = "/brochures/brochure.pdf";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.download = "Amor-Villa-Brochure.pdf";
@@ -154,7 +153,7 @@ export default function AboutUs() {
               </div>
               <div className="text-center">
                 <p className="text-3xl sm:text-4xl font-bold text-amber-500 mb-1">
-                  30+
+                  35+
                 </p>
                 <p className="text-xs sm:text-sm text-zinc-500">
                   Premium Amenities
@@ -225,7 +224,7 @@ export default function AboutUs() {
             </h2>
             <p className="text-sm sm:text-base font-sans mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto text-gray-300 px-4">
               Join the exclusive community at AMOR, where Roman-inspired
-              architecture meets cutting-edge AI technology. Experience 30+
+              architecture meets cutting-edge AI technology. Experience 35+
               premium amenities in a fully secured, LDA and RERA-approved
               development.
             </p>

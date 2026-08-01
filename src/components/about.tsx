@@ -200,7 +200,7 @@ const AboutSection = () => {
 
             <div className="stat-item group">
               <h3 className="text-3xl md:text-4xl font-semibold text-[#d5b86a]">
-                <CountingNumber value={4} suffix="+" />
+                <CountingNumber value={5} suffix="+" />
               </h3>
               <motion.p
                 className="text-sm text-white/70 mt-1 relative overflow-hidden"

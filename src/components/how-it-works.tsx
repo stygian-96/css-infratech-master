@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Wrapper from "./global/wrapper";
 import ScheduleVisitModal from "./schedulevisit-dialog";
 
 export default function MasterpiecesSection() {
   const [hoverImage, setHoverImage] = useState<number | null>(null);
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // Animation variants
   const fadeIn = {
@@ -25,7 +27,7 @@ export default function MasterpiecesSection() {
   const galleryItems = [
     {
       id: "main",
-      src: "/images/2.avif",
+      src: "/images/1.jpg",
       alt: "Luxury Villa Exterior",
       width: 900,
       height: 600,
@@ -34,7 +36,7 @@ export default function MasterpiecesSection() {
     },
     {
       id: "long",
-      src: "/images/1.avif",
+      src: "/images/2.jpg",
       alt: "Modern Interior Design",
       width: 500,
       height: 300,
@@ -42,7 +44,7 @@ export default function MasterpiecesSection() {
     },
     {
       id: "circle",
-      src: "/images/3.avif",
+      src: "/images/3.jpg",
       alt: "Elegant Pool Area",
       width: 400,
       height: 400,
@@ -50,13 +52,45 @@ export default function MasterpiecesSection() {
     },
     {
       id: "small",
-      src: "/images/4.avif",
+      src: "/images/4.jpg",
       alt: "Premium Living Space",
       width: 300,
       height: 300,
       className: "w-[100px] h-[100px] rounded-[40px] overflow-hidden shadow-md",
     },
   ];
+
+  // Lightbox: browse the gallery images in a full-screen modal
+  const lightboxImages = galleryItems.map((item) => ({
+    src: item.src,
+    alt: item.alt,
+  }));
+
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+  const showPrev = () =>
+    setLightboxIndex((i) =>
+      i === null ? i : (i - 1 + lightboxImages.length) % lightboxImages.length,
+    );
+  const showNext = () =>
+    setLightboxIndex((i) =>
+      i === null ? i : (i + 1) % lightboxImages.length,
+    );
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showPrev();
+      if (e.key === "ArrowRight") showNext();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightboxIndex]);
 
   return (
     <>
@@ -121,10 +155,11 @@ export default function MasterpiecesSection() {
               >
                 {/* LEFT BIG IMAGE */}
                 <motion.div
-                  className={galleryItems[0].className}
+                  className={`${galleryItems[0].className} cursor-zoom-in`}
                   whileHover={{ y: -8, scale: 1.02 }}
                   onHoverStart={() => setHoverImage(0)}
                   onHoverEnd={() => setHoverImage(null)}
+                  onClick={() => openLightbox(0)}
                 >
                   <Image
                     src={galleryItems[0].src}
@@ -144,10 +179,11 @@ export default function MasterpiecesSection() {
                 <div className="flex flex-col gap-6">
                   {/* TOP RIGHT LONG IMAGE */}
                   <motion.div
-                    className={galleryItems[1].className}
+                    className={`${galleryItems[1].className} cursor-zoom-in`}
                     whileHover={{ y: -5, scale: 1.02 }}
                     onHoverStart={() => setHoverImage(1)}
                     onHoverEnd={() => setHoverImage(null)}
+                    onClick={() => openLightbox(1)}
                   >
                     <Image
                       src={galleryItems[1].src}
@@ -169,10 +205,11 @@ export default function MasterpiecesSection() {
                   <div className="flex items-center gap-6">
                     {/* CIRCLE IMAGE */}
                     <motion.div
-                      className={galleryItems[2].className}
+                      className={`${galleryItems[2].className} cursor-zoom-in`}
                       whileHover={{ y: -5, scale: 1.05 }}
                       onHoverStart={() => setHoverImage(2)}
                       onHoverEnd={() => setHoverImage(null)}
+                      onClick={() => openLightbox(2)}
                     >
                       <Image
                         src={galleryItems[2].src}
@@ -193,10 +230,11 @@ export default function MasterpiecesSection() {
 
                     {/* SMALL RECTANGLE */}
                     <motion.div
-                      className={galleryItems[3].className}
+                      className={`${galleryItems[3].className} cursor-zoom-in`}
                       whileHover={{ y: -5, scale: 1.05 }}
                       onHoverStart={() => setHoverImage(3)}
                       onHoverEnd={() => setHoverImage(null)}
+                      onClick={() => openLightbox(3)}
                     >
                       <Image
                         src={galleryItems[3].src}
@@ -247,7 +285,10 @@ export default function MasterpiecesSection() {
                 <div className="absolute -bottom-5 -right-5 w-[70%] h-[70%] border-b-2 border-r-2 border-[#D4AF66] rounded-br-xl z-0"></div>
 
                 {/* Main Image */}
-                <div className="rounded-3xl overflow-hidden shadow-xl relative z-10">
+                <div
+                  className="rounded-3xl overflow-hidden shadow-xl relative z-10 cursor-zoom-in"
+                  onClick={() => openLightbox(3)}
+                >
                   <Image
                     src="/images/4.avif"
                     alt="Amor - Premium Luxury Villas"
@@ -283,8 +324,6 @@ export default function MasterpiecesSection() {
                 {/* Right side - Specifications */}
                 <div className="flex font-sans flex-col items-center text-gray-700 tracking-wide text-xs">
                   <p className="font-medium">
-                    <span>2BHK</span>
-                    <span className="mx-2">•</span>
                     <span>3BHK</span>
                     <span className="mx-2">•</span>
                     <span>4BHK</span>
@@ -298,6 +337,75 @@ export default function MasterpiecesSection() {
           </div>
         </Wrapper>
       </div>
+
+      {/* Image Lightbox */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            onClick={closeLightbox}
+          >
+            <button
+              onClick={closeLightbox}
+              aria-label="Close"
+              className="absolute top-5 right-5 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+            >
+              <X size={24} />
+            </button>
+
+            {lightboxImages.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    showPrev();
+                  }}
+                  aria-label="Previous image"
+                  className="absolute left-3 sm:left-6 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+                >
+                  <ChevronLeft size={28} />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    showNext();
+                  }}
+                  aria-label="Next image"
+                  className="absolute right-3 sm:right-6 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+                >
+                  <ChevronRight size={28} />
+                </button>
+              </>
+            )}
+
+            <motion.div
+              key={lightboxIndex}
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-h-[85vh] w-auto max-w-5xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={lightboxImages[lightboxIndex].src}
+                alt={lightboxImages[lightboxIndex].alt}
+                width={1400}
+                height={933}
+                quality={95}
+                className="max-h-[85vh] w-auto rounded-2xl object-contain shadow-2xl"
+              />
+            </motion.div>
+
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1 text-sm text-white/90">
+              {lightboxIndex + 1} / {lightboxImages.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Schedule Visit Modal */}
       <ScheduleVisitModal
