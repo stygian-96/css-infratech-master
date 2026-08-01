@@ -29,6 +29,10 @@ export const NAV_LINKS = [
         name: "Events and Campaign",
         link: "/media/events-and-campaigns",
       },
+      {
+        name: "Walkthrough",
+        link: "/media/walkthrough",
+      },
     ],
   },
 ];

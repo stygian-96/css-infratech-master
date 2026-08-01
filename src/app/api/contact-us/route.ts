@@ -27,7 +27,6 @@ const projectMap: Record<string, string> = {
 const typeMap: Record<string, string> = {
   plot: "Plot",
   villas: "Villas",
-  flat: "Flat",
 };
 
 export async function POST(request: Request) {
