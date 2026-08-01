@@ -45,7 +45,7 @@ export default function AboutUs() {
           style={{ scale: heroScale, y: heroY }}
         >
           <Image
-            src="/images/3.avif"
+            src="/images/3.jpg"
             alt="Construction Site"
             fill
             className="object-cover brightness-[0.5]"
