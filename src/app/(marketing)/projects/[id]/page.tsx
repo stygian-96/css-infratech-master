@@ -44,6 +44,7 @@ interface ProjectData {
   id: string;
   title: string;
   category: string;
+  status: string;
   location: string;
   year: string;
   tagline: string;
@@ -180,6 +181,7 @@ export default function ProjectDetailPage() {
           id: apiData.id,
           title: projectTitle,
           category: "Residential",
+          status: apiData.status || "UNDER_CONSTRUCTION",
           location: apiData.location,
           year: apiData.completionDate
             ? new Date(apiData.completionDate).getFullYear().toString()
@@ -408,6 +410,26 @@ export default function ProjectDetailPage() {
                 </div>
               )}
             </motion.div>
+            {project.status && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="mb-4"
+              >
+                <span
+                  className={`inline-block px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg ${
+                    project.status === "COMPLETED"
+                      ? "bg-emerald-500 text-white shadow-emerald-500/30"
+                      : "bg-amber-600 text-white shadow-amber-600/30"
+                  }`}
+                >
+                  {project.status === "COMPLETED"
+                    ? "Completed"
+                    : "Under Construction"}
+                </span>
+              </motion.div>
+            )}
             <motion.p
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8"
               initial={{ opacity: 0 }}

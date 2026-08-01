@@ -292,6 +292,21 @@ export default function ProjectsPage() {
                           </span>
                         </div>
                       )}
+                      {project.status && (
+                        <div className="absolute top-4 right-4 z-20">
+                          <span
+                            className={`px-3 py-1 rounded-full text-xs font-bold uppercase shadow-lg ${
+                              project.status === "COMPLETED"
+                                ? "bg-emerald-500 text-white shadow-emerald-500/30"
+                                : "bg-amber-600 text-white shadow-amber-600/30"
+                            }`}
+                          >
+                            {project.status === "COMPLETED"
+                              ? "Completed"
+                              : "Under Construction"}
+                          </span>
+                        </div>
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-95" />
                       <div className="absolute inset-0 flex flex-col justify-end p-8">
                         <span className="text-amber-400 text-sm uppercase tracking-wider mb-2">
