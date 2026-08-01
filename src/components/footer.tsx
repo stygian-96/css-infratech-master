@@ -73,62 +73,45 @@ const Footer = () => {
         {/* Content Wrapper */}
         <div className="relative z-10">
           {/* Hero Section */}
-          <div className="relative h-[600px] md:h-[700px] w-full">
+          <div className="relative min-h-[420px] md:min-h-[500px] w-full py-16 md:py-24">
             {/* Content */}
             <div className="h-full flex flex-col items-center justify-center px-4">
               {/* Main Heading */}
-              <div className="text-center mb-8">
+              <div className="text-center mb-10">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                   Your dream
                   <br />
                   home awaits
                 </h1>
-                <p className="text-white/90 text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8">
+                <p className="text-white/90 text-base md:text-lg lg:text-xl max-w-2xl mx-auto">
                   Whether you're exploring our homes or envisioning something
                   <br className="hidden md:block" />
                   custom, we're here to bring your dream to life.
                 </p>
               </div>
 
-              {/* Large Brand Text with CTA Button */}
-              <div className="relative w-full max-w-7xl mx-auto px-4">
-                <h2
-                  className="text-[70px] sm:text-[140px] md:text-[150px] lg:text-[170px] xl:text-[200px] font-bold leading-none text-center select-none"
-                  style={{
-                    background:
-                      "linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.15) 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    textShadow: "none",
-                  }}
+              {/* CTA Button */}
+              <div className="flex justify-center w-full">
+                <button
+                  onClick={() => setIsQuoteDialogOpen(true)}
+                  className="bg-[#e1d18a] text-black font-bold rounded-full w-36 h-36 sm:w-40 sm:h-40 lg:w-40 lg:h-40 flex flex-col items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105"
                 >
-                  ccsinfratech
-                </h2>
-
-                {/* Floating CTA Button */}
-                <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <button
-                    onClick={() => setIsQuoteDialogOpen(true)}
-                    className="bg-[#e1d18a] text-black font-bold rounded-full w-36 h-36 sm:w-40 sm:h-40 lg:w-40 lg:h-40 flex flex-col items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105"
-                  >
-                    <span className="text-base sm:text-lg md:text-xl font-bold">
-                      Get Your
-                    </span>
-                    <span className="text-base sm:text-lg md:text-xl font-bold">
-                      Free
-                    </span>
-                    <span className="text-base sm:text-lg md:text-xl font-bold">
-                      Quote
-                    </span>
-                  </button>
-                </div>
+                  <span className="text-base sm:text-lg md:text-xl font-bold">
+                    Get Your
+                  </span>
+                  <span className="text-base sm:text-lg md:text-xl font-bold">
+                    Free
+                  </span>
+                  <span className="text-base sm:text-lg md:text-xl font-bold">
+                    Quote
+                  </span>
+                </button>
               </div>
             </div>
           </div>
 
           {/* Floating Footer Card */}
-          <div className="relative -mt-32 md:-mt-40 px-4 pb-8">
+          <div className="relative -mt-10 md:-mt-12 px-4 pb-8">
             <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
               <div className="px-6 md:px-12 py-12">
                 {/* Main Footer Content */}
