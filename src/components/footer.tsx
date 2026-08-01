@@ -139,7 +139,7 @@ const Footer = () => {
                       href="tel:+"
                       className="block text-2xl md:text-3xl font-bold text-gray-900 hover:text-gray-700 transition-colors duration-200"
                     >
-                      +(91)
+                      +(91) 70818 85577
                     </a>
                     <a
                       href="mailto:info@ccsinfratech.com"
