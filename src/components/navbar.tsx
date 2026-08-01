@@ -5,7 +5,7 @@ import { NAV_LINKS } from "@/constants";
 import { useClickOutside } from "@/hooks";
 import { cn } from "@/lib";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, MenuIcon, XIcon } from "lucide-react";
+import { ChevronDown, Download, MenuIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCallback, useRef, useState, memo } from "react";
@@ -249,7 +249,7 @@ const Navbar = () => {
     <header className="fixed w-full top-0 inset-x-0 z-50 mt-5 font-['Times_New_Roman',Times,serif]">
       {/* Desktop Navigation */}
       <nav
-        style={{ minWidth: "800px", width: "40%" }}
+        style={{ minWidth: "920px", width: "min(90%, 1100px)" }}
         className="hidden lg:flex bg-black/90 backdrop-blur-md border border-t-foreground/20 border-b-foreground/10 border-x-foreground/15 items-center justify-between rounded-full relative p-4 z-50 mx-auto"
       >
         <Wrapper className="flex items-center justify-between lg:px-4">
@@ -287,7 +287,17 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="flex-shrink-0">
+          <div className="flex flex-shrink-0 items-center gap-2">
+            <Button
+              asChild
+              className="bg-white text-black hover:bg-amber-100"
+              size="sm"
+            >
+              <a download="CCS-Infratech-Brochure.pdf" href="/brochures/brochure.pdf">
+                <Download className="h-4 w-4" />
+                Download Brochure
+              </a>
+            </Button>
             <Link href="/contact-us">
               <Button
                 className="bg-[#fbe575] hover:bg-[#fbe575] text-black text-lg rounded-full "
@@ -323,7 +333,21 @@ const Navbar = () => {
             </Link>
 
             {/* Mobile Actions */}
-            <div className="flex items-center justify-center gap-x-3">
+            <div className="flex items-center justify-center gap-x-2">
+              <Button
+                asChild
+                className="bg-white text-black hover:bg-amber-100"
+                size="sm"
+              >
+                <a
+                  aria-label="Download brochure"
+                  download="CCS-Infratech-Brochure.pdf"
+                  href="/brochures/brochure.pdf"
+                >
+                  <Download className="h-4 w-4" />
+                  <span className="hidden xl:inline">Brochure</span>
+                </a>
+              </Button>
               <Link href="/contact-us" onClick={closeMobileMenu}>
                 <Button
                   size="sm"
