@@ -293,9 +293,6 @@ function ContactForm({
                     <SelectItem value="villas" className={selectItemClass}>
                       Villas
                     </SelectItem>
-                    <SelectItem value="flat" className={selectItemClass}>
-                      Flat
-                    </SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
