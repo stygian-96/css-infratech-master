@@ -69,8 +69,8 @@ export default function ContactSection() {
               <ContactDetail
                 icon={<Phone />}
                 label="Phone number"
-                value="+(91) 0000-0000"
-                href="tel:+910000000000"
+                value="+(91) 70818-85577"
+                href="tel:+917081885577"
               />
               <ContactDetail
                 icon={<MailCheck />}
