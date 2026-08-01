@@ -290,7 +290,7 @@ export default function MasterpiecesSection() {
                   onClick={() => openLightbox(3)}
                 >
                   <Image
-                    src="/images/4.avif"
+                    src="/images/4.jpg"
                     alt="Amor - Premium Luxury Villas"
                     width={800}
                     height={600}
