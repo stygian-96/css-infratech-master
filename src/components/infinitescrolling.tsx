@@ -16,7 +16,7 @@ interface Project {
         width: number;
         height: number;
       };
-  status: "COMPLETED" | "UNDER CONSTRUCTION";
+  status: "COMPLETED" | "UNDER CONSTRUCTION"| "ONGOING";
   excerpt: string;
   location: string;
   image: string;
