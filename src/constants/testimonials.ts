@@ -2,7 +2,7 @@ export const TESTIMONIALS = [
   {
     content:
       "The AI-powered valuation tool helped me price my properties accurately. Closed deals 30% faster than traditional methods.",
-    author: "Emma",
+    author: "Nikita",
     role: "Real Estate Agent",
     image: "/images/avatar-placeholder.svg",
     rating: 5,
@@ -10,7 +10,7 @@ export const TESTIMONIALS = [
   {
     content:
       "Virtual tours and 3D viewing features saved me countless hours. Made property hunting efficient and enjoyable from anywhere.",
-    author: "James",
+    author: "Aarav",
     role: "Property Buyer",
     image: "/images/avatar-placeholder.svg",
     rating: 5,
@@ -18,7 +18,7 @@ export const TESTIMONIALS = [
   {
     content:
       "Managing multiple properties is now seamless. The automated maintenance tracking and tenant portal are game-changers.",
-    author: "Sofia",
+    author: "Ramesh",
     role: "Property Manager",
     image: "/images/avatar-placeholder.svg",
     rating: 5,
@@ -26,7 +26,7 @@ export const TESTIMONIALS = [
   {
     content:
       "The document handling system is brilliant. Digital contracts and secure payments have simplified my rental processes.",
-    author: "Lucas",
+    author: "Arushi",
     role: "Property Owner",
     image: "/images/avatar-placeholder.svg",
     rating: 5,
@@ -34,7 +34,7 @@ export const TESTIMONIALS = [
   {
     content:
       "Market analytics and trend reports help me make data-driven decisions. Perfect tool for investment planning.",
-    author: "Isabella",
+    author: "Ravi",
     role: "Property Investor",
     image: "/images/avatar-placeholder.svg",
     rating: 5,
@@ -42,7 +42,7 @@ export const TESTIMONIALS = [
   {
     content:
       "Tenant screening and rental management features are exceptional. Reduced my vacancy rates significantly.",
-    author: "Oliver",
+    author: "Sumit",
     role: "Landlord",
     image: "/images/avatar-placeholder.svg",
     rating: 5,
