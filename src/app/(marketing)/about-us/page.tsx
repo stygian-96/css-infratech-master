@@ -174,13 +174,14 @@ export default function AboutUs() {
 
             <div className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 p-4 sm:p-6 backdrop-blur-xl bg-white/80 rounded-2xl shadow-xl border border-gray-200">
               <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center overflow-hidden relative">
-                <Image
-                  src="/logo/AmorLogo.svg"
-                  alt="CSS Infratech"
-                  fill
-                  className="object-contain scale-150"
-                  priority
-                />
+               <Image
+  src="/logo/amor-logo64.png"
+  alt="AMOR Logo"
+  width={120}
+  height={120}
+  className="w-full h-full object-contain"
+  priority
+/>
               </div>
               <p className="mt-2 text-xs sm:text-sm text-zinc-700 text-center">
                 Flagship Project

@@ -18,6 +18,11 @@ const config = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-manrope)", "ui-sans-serif", "system-ui", "sans-serif"],
+				serif: ["var(--font-cormorant)", "Georgia", "serif"],
+				heading: ["var(--font-cormorant)", "Georgia", "serif"],
+			},
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

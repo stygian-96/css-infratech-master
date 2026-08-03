@@ -34,7 +34,7 @@ const projects: Project[] = [
       width: 300,
       height: 80,
     },
-    status: "COMPLETED",
+    status: "ONGOING",
     excerpt:
       "AMOR represents our ambition to redefine modern living. As Lucknow's first AI-powered villa community, this RERA-approved project features 105 luxurious villas that blend Roman-inspired architecture with cutting-edge smart home technology.",
     location: "Lucknow, UP",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     excerpt:
       "Our journey from agricultural trade to cold storage reflects our ability to evolve while staying true to our core values of integrity, innovation, and excellence in preserving quality.",
     location: "Lucknow, UP",
-    image: "/images/BadmintonCourt.png",
+    image: "/images/COLD-STORAGE.jpg",
     slug: "cold-storage",
   },
 ];
