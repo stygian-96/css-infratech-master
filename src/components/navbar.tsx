@@ -246,7 +246,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed w-full top-0 inset-x-0 z-50 mt-5 font-['Times_New_Roman',Times,serif]">
+    <header className="fixed w-full top-0 inset-x-0 z-50 mt-5">
       {/* Desktop Navigation */}
       <nav
         style={{ minWidth: "920px", width: "min(90%, 1100px)" }}
