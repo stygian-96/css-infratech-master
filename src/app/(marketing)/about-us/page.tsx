@@ -145,7 +145,7 @@ export default function AboutUs() {
               </div>
               <div className="text-center">
                 <p className="text-3xl sm:text-4xl font-bold text-amber-500 mb-1">
-                  60
+                  60+
                 </p>
                 <p className="text-xs sm:text-sm text-zinc-500">
                   Years of Legacy
