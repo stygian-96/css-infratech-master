@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Clock, Coins, DollarSign } from "lucide-react";
+import { Clock, Coins } from "lucide-react";
 
 export default function TrustedSection() {
   return (
@@ -81,6 +81,7 @@ export default function TrustedSection() {
           className="w-full relative"
         >
           <div className="absolute -top-5 -left-5 right-5 bottom-5 bg-[#d7b56d]/10 rounded-xl -z-10"></div>
+
           <Image
             src="/images/amor.avif"
             width={900}
@@ -90,27 +91,6 @@ export default function TrustedSection() {
           />
         </motion.div>
       </div>
-
-      {/* Partners logos */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto mt-24 pt-12 border-t border-gray-200"
-      >
-        <div className="flex flex-wrap justify-between items-center gap-y-8">
-          {/* Add placeholder logos - you'll want to replace these with actual partner logos */}
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div
-              key={i}
-              className="w-1/2 md:w-1/5 px-4 opacity-70 hover:opacity-100 transition-opacity"
-            >
-              <div className="h-12 bg-gray-200/70 rounded-md"></div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
     </section>
   );
 }
